@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.widget.EditText;
 
+import common.suffixcomplitertext.completers.AbstractCompleter;
+
 class Suffixer {
 	
 	
@@ -18,23 +20,8 @@ class Suffixer {
 //	}
 	
 	public Suffixer(EditText editText, AbstractCompleter completer) {
-		mEditText= new WeakReference<EditText>(editText);
 		mCompleter=completer;
-	}
-	
-	
-	public Suffixer(AbstractCompleter completer) {
-		mCompleter=completer;
-	}
-	
-	public Suffixer() {}
-	
-	public void addEditText(EditText editText){
-		mEditText= new WeakReference<EditText>(editText);
-	}
-	
-	public void addComplter(AbstractCompleter completer){
-		mCompleter=completer;
+        mEditText= new WeakReference<EditText>(editText);
 	}
 	
 	public void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter){

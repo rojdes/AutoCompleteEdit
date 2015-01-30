@@ -1,4 +1,4 @@
-package common.suffixcomplitertext;
+package common.suffixcomplitertext.completers;
 
 import java.util.List;
 import java.util.Locale;

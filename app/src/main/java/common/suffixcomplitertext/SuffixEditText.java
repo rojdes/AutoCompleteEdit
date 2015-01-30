@@ -5,14 +5,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.EditText;
 
+import common.suffixcomplitertext.completers.AbstractCompleter;
+
 public class SuffixEditText extends EditText {
 	
-	
-	
 	private static final String TAG="HINT_EDIT_TEXT";
-	private  Suffixer mSuffixer= new Suffixer();
-	
-	private void log(String text){
+	private  Suffixer mSuffixer;
+
+    private void log(String text){
 		Log.e(TAG,text!=null?text:"null");
 	}
 
@@ -35,8 +35,6 @@ public class SuffixEditText extends EditText {
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
-		mSuffixer.addEditText(this);
-		mSuffixer.addComplter(new DotCompleter());
 		log("onAttachedToWindow");
 	}
 	
@@ -59,8 +57,8 @@ public class SuffixEditText extends EditText {
 		super.onFinishInflate();
 		log("onFinishInflate");
 	}
-	
-	
-	
-	
+
+    public void setCompleter(AbstractCompleter completer) {
+        mSuffixer =new Suffixer(this, completer);
+    }
 }

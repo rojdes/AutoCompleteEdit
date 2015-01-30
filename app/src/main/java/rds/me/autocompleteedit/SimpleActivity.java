@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import common.suffixcomplitertext.SuffixEditText;
+import common.suffixcomplitertext.completers.DotCompleter;
+
 
 public class SimpleActivity extends ActionBarActivity {
 
@@ -12,6 +15,9 @@ public class SimpleActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple);
+        SuffixEditText mEditText =(SuffixEditText)findViewById(R.id.suffix_view);
+        mEditText.setCompleter(new DotCompleter());
+
     }
 
 

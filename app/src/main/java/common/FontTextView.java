@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.TextView;
 
-import rds.me.autocompletetextvew.R;
+import rds.me.autocompleteedit.R;
 
 
 public class FontTextView extends TextView{
